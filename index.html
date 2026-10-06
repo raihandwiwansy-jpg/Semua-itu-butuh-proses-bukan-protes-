@@ -1,0 +1,531 @@
+<!doctype html><html><head><meta charset=utf8><meta name=viewport content="width=device-width,initial-scale=1,viewport-fit=cover"><style>:root{color-scheme:light;box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}html{scroll-padding-top:env(safe-area-inset-top,0px)}body{margin:0;padding:0;font:14px -apple-system,BlinkMacSystemFont,sans-serif;background:#faf9f5;color:#141413}img{max-width:100%}[hidden]:not([hidden=until-found i]){display:none!important}</style></head><body>
+<title>Semua Itu Butuh Proses, Bukan Protes</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;700;800&family=Literata:ital,opsz,wght@0,7..72,400;0,7..72,600;1,7..72,400&display=swap">
+<style>
+/* Konsep: buku dibaca seperti menaiki tangga. Tiap bab satu anak tangga, ditandai amber di atas latar teal-tinta. */
+:root{
+  --bg:#F1F4F1;
+  --paper:#FAFBF9;
+  --ink:#14262B;
+  --muted:#5A6B6E;
+  --accent:#0F6B66;
+  --mark:#C98200;
+  --rule:#D3DBD6;
+  --tint:#E4EEEA;
+  --font-display:"Bricolage Grotesque","Trebuchet MS",system-ui,sans-serif;
+  --font-body:"Literata",Georgia,"Times New Roman",serif;
+  color-scheme:light;
+}
+@media (prefers-color-scheme:dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1A1D;--paper:#12252A;--ink:#E5EEEA;--muted:#92A6A5;--accent:#5CC4B8;--mark:#F0B64A;--rule:#26393C;--tint:#17302F;color-scheme:dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1A1D;--paper:#12252A;--ink:#E5EEEA;--muted:#92A6A5;--accent:#5CC4B8;--mark:#F0B64A;--rule:#26393C;--tint:#17302F;color-scheme:dark;
+}
+*{box-sizing:border-box}
+body{background:var(--bg);color:var(--ink);font-family:var(--font-body);font-size:18px;line-height:1.75;padding-inline:16px;padding-block:0}
+.bar{position:fixed;left:0;right:0;top:0;height:4px;background:transparent;z-index:5}
+.bar i{display:block;height:100%;width:0;background:var(--mark)}
+.wrap{max-width:680px;margin-inline:auto}
+header.cover{padding-block:72px 40px}
+.kicker{font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mark);margin:0 0 20px}
+h1{font-family:var(--font-display);font-weight:800;font-size:clamp(38px,9vw,64px);line-height:1.02;letter-spacing:-.02em;margin:0 0 24px;text-wrap:balance}
+h1 em{font-style:normal;color:var(--accent)}
+.sub{font-size:20px;color:var(--muted);margin:0 0 28px;max-width:34em}
+.stairs{display:flex;align-items:flex-end;gap:4px;height:44px;margin-top:8px}
+.stairs b{display:block;width:100%;max-width:34px;background:var(--rule);border-radius:2px 2px 0 0}
+.stairs b.on{background:var(--mark)}
+nav.toc{background:var(--paper);border:1px solid var(--rule);border-radius:10px;padding:24px 20px;margin-block:8px 56px}
+nav.toc h2{font-family:var(--font-display);font-size:14px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 14px;color:var(--muted)}
+nav.toc ol{list-style:none;margin:0;padding:0;display:grid;gap:2px}
+nav.toc a{display:grid;grid-template-columns:64px 1fr;gap:8px;padding:8px 6px;color:var(--ink);text-decoration:none;border-radius:6px;line-height:1.35}
+nav.toc a:hover,nav.toc a:focus-visible{background:var(--tint);outline:none}
+nav.toc .n{font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.06em;color:var(--accent);padding-top:2px}
+section.bab{padding-block:56px;border-top:1px solid var(--rule);scroll-margin-top:8px}
+.label{display:flex;align-items:center;gap:14px;margin-bottom:18px}
+.label span{font-family:var(--font-display);font-weight:700;font-size:13px;letter-spacing:.14em;text-transform:uppercase;color:var(--mark)}
+.label .stairs{height:22px;margin:0;gap:3px;flex:1;max-width:220px}
+h2.jdl{font-family:var(--font-display);font-weight:800;font-size:clamp(28px,6.5vw,40px);line-height:1.1;letter-spacing:-.015em;margin:0 0 18px;text-wrap:balance}
+.epi{font-style:italic;color:var(--muted);border-left:3px solid var(--mark);padding-left:16px;margin:0 0 32px}
+p{margin:0 0 1.15em}
+.pull{font-family:var(--font-display);font-weight:700;font-size:clamp(21px,4.6vw,27px);line-height:1.3;color:var(--accent);margin:2em 0;text-wrap:balance}
+h3{font-family:var(--font-display);font-weight:700;font-size:20px;margin:1.8em 0 .5em}
+.box{background:var(--tint);border-radius:10px;padding:20px 20px 8px;margin-top:2em}
+.box h4{font-family:var(--font-display);font-size:13px;letter-spacing:.14em;text-transform:uppercase;margin:0 0 12px;color:var(--accent)}
+.box ul{margin:0 0 12px;padding-left:1.2em}
+.box li{margin-bottom:.6em}
+.box p{margin-bottom:.9em}
+.sign{font-family:var(--font-display);font-weight:700;color:var(--muted);margin-top:1.6em}
+footer{padding-block:48px 80px;border-top:1px solid var(--rule);text-align:center;color:var(--muted);font-size:15px}
+a:focus-visible{outline:2px solid var(--mark);outline-offset:2px}
+.js section.bab{display:none}
+.js section.bab.on{display:block}
+.start{display:inline-block;margin-top:28px;background:var(--accent);color:var(--paper);padding:14px 24px;border-radius:8px;font-family:var(--font-display);font-weight:700;font-size:17px;text-decoration:none}
+.start:hover{filter:brightness(1.1)}
+.topback{display:inline-block;margin-top:28px;font-family:var(--font-display);font-weight:700;font-size:14px;color:var(--accent);text-decoration:none}
+.topback:hover{text-decoration:underline}
+.pager{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:48px}
+.pager a{display:flex;flex-direction:column;gap:4px;padding:16px 18px;border:1px solid var(--rule);border-radius:10px;background:var(--paper);color:var(--ink);text-decoration:none;font-family:var(--font-display);min-width:0}
+.pager a small{font-size:12px;letter-spacing:.12em;text-transform:uppercase;color:var(--mark);font-weight:700}
+.pager a span{font-weight:700;font-size:17px;line-height:1.25}
+.pager a:hover{border-color:var(--accent)}
+.pager .prev{grid-column:1}
+.pager .next{grid-column:2;background:var(--accent);color:var(--paper);border-color:var(--accent);text-align:right}
+.pager .next small{color:inherit;opacity:.85}
+.pager .next:hover{filter:brightness(1.1)}
+.pager .solo{grid-column:1/-1}
+@media (max-width:480px){.pager{grid-template-columns:1fr}.pager .prev,.pager .next{grid-column:1}.pager .next{order:-1}}
+@media (prefers-reduced-motion:no-preference){html{scroll-behavior:smooth}}
+@media (max-width:420px){body{font-size:17px}nav.toc a{grid-template-columns:54px 1fr}}
+</style>
+
+<script>document.documentElement.classList.add('js')</script>
+<div class="bar" aria-hidden="true"><i id="prog"></i></div>
+
+<div class="wrap">
+<header class="cover">
+  <p class="kicker">Naskah materi · draf pertama</p>
+  <h1>Semua Itu Butuh <em>Proses</em>, Bukan Protes</h1>
+  <p class="sub">Catatan untuk anak muda yang sedang berjuang menuju masa depan, dan kadang ingin menyerah di tengah jalan.</p>
+  <div class="stairs" id="coverStairs" aria-hidden="true"></div>
+  <a class="start" href="#prolog">Mulai membaca dari Prolog →</a>
+</header>
+
+<nav class="toc" aria-label="Daftar isi">
+  <h2>Daftar Isi</h2>
+  <ol>
+    <li><a href="#prolog"><span class="n">PROLOG</span><span>Surat untuk Kamu yang Sedang Lelah</span></a></li>
+    <li><a href="#bab-1"><span class="n">BAB 1</span><span>Zaman yang Mengajari Kita Tidak Sabar</span></a></li>
+    <li><a href="#bab-2"><span class="n">BAB 2</span><span>Protes Itu Manusiawi, Jangan Tinggal Di Sana</span></a></li>
+    <li><a href="#bab-3"><span class="n">BAB 3</span><span>Proses Itu Tidak Rapi</span></a></li>
+    <li><a href="#bab-4"><span class="n">BAB 4</span><span>Jangan Banding Babmu dengan Bab Orang Lain</span></a></li>
+    <li><a href="#bab-5"><span class="n">BAB 5</span><span>Langkah Kecil yang Diulang Setiap Hari</span></a></li>
+    <li><a href="#bab-6"><span class="n">BAB 6</span><span>Gagal, Guru yang Galak tapi Jujur</span></a></li>
+    <li><a href="#bab-7"><span class="n">BAB 7</span><span>Sabar Bukan Berarti Diam</span></a></li>
+    <li><a href="#bab-8"><span class="n">BAB 8</span><span>Siapa yang Duduk Di Sekitarmu</span></a></li>
+    <li><a href="#bab-9"><span class="n">BAB 9</span><span>Istirahat Bukan Menyerah</span></a></li>
+    <li><a href="#bab-10"><span class="n">BAB 10</span><span>Ikhtiar, Doa, dan Tenang Setelahnya</span></a></li>
+    <li><a href="#bab-11"><span class="n">BAB 11</span><span>Menjadi Orang yang Siap Menerima Masa Depan</span></a></li>
+    <li><a href="#epilog"><span class="n">EPILOG</span><span>Surat dari Dirimu yang Sudah Sampai</span></a></li>
+  </ol>
+</nav>
+
+<main>
+
+<section class="bab" id="prolog">
+  <div class="label"><span>Prolog</span></div>
+  <h2 class="jdl">Surat untuk Kamu yang Sedang Lelah</h2>
+  <p class="epi">Tidak ada yang bisa melompat ke puncak. Yang ada hanya orang yang tidak berhenti melangkah.</p>
+  <p>Kalau kamu sedang membaca ini, mungkin hari ini sedang tidak mudah. Mungkin kamu sudah belajar sampai larut, tapi hasilnya belum terlihat. Mungkin kamu sudah berusaha sekuat tenaga, sementara teman-temanmu tampak melaju lebih cepat. Mungkin ada malam ketika kamu menatap langit-langit kamar dan bertanya pelan, "Sebenarnya aku ini sedang menuju ke mana?"</p>
+  <p>Buku ini ditulis untukmu.</p>
+  <p>Bukan oleh orang yang sudah selesai berjuang, tapi oleh seseorang yang masih berjalan di jalan yang sama. Aku tahu rasanya ingin protes kepada keadaan: kenapa harus sesulit ini, kenapa hasilnya lama sekali, kenapa orang lain tampak lebih mudah. Aku tahu rasanya ingin menyerah, lalu malu karena ingin menyerah.</p>
+  <p>Karena itu buku ini tidak akan menyuruhmu berhenti mengeluh. Keluhan adalah tanda bahwa kamu masih peduli. Buku ini hanya ingin mengajakmu melihat satu hal yang sering terlewat: semua hal baik yang kamu inginkan dibangun lewat proses, dan proses itu punya aturannya sendiri. Ia tidak bisa dipercepat dengan marah, tidak bisa ditawar dengan mengeluh, tapi selalu menghargai orang yang terus datang.</p>
+  <p class="pull">Protes membuatmu berhenti di tempat. Proses membuatmu bergerak, sekecil apa pun geraknya.</p>
+  <p>Kamu tidak perlu membaca buku ini sekali duduk. Bacalah satu bab setiap kali kamu butuh. Di akhir tiap bab ada beberapa pertanyaan untuk direnungkan dan satu langkah kecil yang bisa dilakukan hari ini juga. Ambil pena, tulis jawabannya jujur-jujur saja. Tidak ada yang menilai.</p>
+  <p>Sekarang tarik napas. Kamu sudah sampai sejauh ini, dan itu bukan hal kecil.</p>
+  <p class="sign">Mari kita mulai.</p>
+</section>
+
+<section class="bab" id="bab-1" data-n="1">
+  <div class="label"><span>Bab 1</span></div>
+  <h2 class="jdl">Zaman yang Mengajari Kita Tidak Sabar</h2>
+  <p class="epi">Pohon tidak tumbuh lebih cepat karena kamu menyiramnya sambil mengomel.</p>
+  <p>Kita hidup di zaman yang serba cepat. Makanan datang dalam tiga puluh menit. Video selesai dalam lima belas detik. Pesan terkirim sebelum sempat dipikirkan. Tanpa sadar, otak kita belajar satu pelajaran yang keliru: bahwa segala sesuatu seharusnya cepat.</p>
+  <p>Lalu kita bertemu hal-hal yang tidak bisa cepat. Menguasai keahlian. Lulus ujian yang berat. Membangun usaha dari nol. Memperbaiki nama baik. Menjadi dewasa. Semuanya lambat, dan kelambatan itu terasa seperti kegagalan padahal bukan.</p>
+  <h3>Media sosial dan ilusi lompatan</h3>
+  <p>Di layar ponsel, kita sering melihat hasil akhir tanpa melihat perjalanannya. Seseorang diwisuda dengan senyum lebar, tapi kamu tidak melihat malam-malam ia hampir berhenti. Seseorang membuka usaha yang ramai, tapi kamu tidak melihat tahun pertama yang sepi. Yang sampai ke beranda hanyalah potongan terbaiknya.</p>
+  <p>Akibatnya, kita mengira keberhasilan itu kejadian, padahal ia adalah rangkaian. Kita mengira orang berhasil karena "beruntung" atau "dari sananya", padahal di balik satu foto kemenangan ada ratusan hari biasa yang tidak pernah difoto.</p>
+  <p class="pull">Kamu bukan lambat. Kamu sedang membandingkan prosesmu dengan hasil orang lain.</p>
+  <h3>Harga dari ketidaksabaran</h3>
+  <p>Ketidaksabaran terasa wajar, tapi ia punya harga. Kita jadi gampang berpindah-pindah tujuan setiap kali hasil belum tampak. Hari ini ingin jadi ini, bulan depan ingin jadi itu. Kita memulai banyak hal dan menyelesaikan sedikit. Pada akhirnya, bukan kemampuan yang kurang, melainkan waktu yang tidak pernah cukup lama diberikan pada satu jalan.</p>
+  <p>Hampir semua hal yang bernilai punya masa "belum kelihatan". Biji yang ditanam tidak langsung muncul di permukaan. Selama berminggu-minggu, ia bekerja di dalam tanah, menumbuhkan akar yang tidak ada yang melihat. Kalau kamu menggali setiap hari untuk memeriksa, kamu hanya merusaknya.</p>
+  <p>Masa belum kelihatan bukan berarti tidak terjadi apa-apa. Di masa itulah akarmu tumbuh.</p>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Hal apa yang paling sering membuatmu merasa "kok belum berhasil juga"?</li>
+      <li>Berapa lama sebenarnya kamu sudah menjalaninya? Tulis angkanya.</li>
+      <li>Siapa orang yang kamu lihat "langsung berhasil", dan apa yang sebenarnya tidak kamu ketahui tentang perjalanannya?</li>
+    </ul>
+    <h4>Langkah kecil hari ini</h4>
+    <p>Pilih satu tujuan yang paling kamu inginkan. Tulis di kertas: "Aku akan memberi ini waktu sampai ___." Isi dengan tanggal yang masuk akal, bukan yang terburu-buru.</p>
+  </div>
+</section>
+
+<section class="bab" id="bab-2" data-n="2">
+  <div class="label"><span>Bab 2</span></div>
+  <h2 class="jdl">Protes Itu Manusiawi, Jangan Tinggal Di Sana</h2>
+  <p class="epi">Mengeluh boleh singgah. Yang berbahaya adalah ketika ia mulai tinggal.</p>
+  <p>Mari kita jujur dari awal. Judul buku ini bukan larangan untuk merasa kesal. Kamu boleh capek. Kamu boleh marah pada keadaan. Kamu boleh menangis di kamar mandi karena merasa semua usahamu sia-sia. Perasaan itu nyata dan tidak perlu dipadamkan dengan kalimat motivasi yang dipaksakan.</p>
+  <p>Masalahnya muncul ketika protes berubah dari perasaan menjadi tempat tinggal.</p>
+  <h3>Dua jenis protes</h3>
+  <p>Ada protes yang membawamu maju. Ia berbunyi, "Cara belajarku ternyata tidak cocok, aku harus ganti." Atau, "Sistem ini tidak adil, aku akan bicara kepada orang yang berwenang." Protes jenis ini lahir dari kepedulian dan berujung pada tindakan.</p>
+  <p>Ada pula protes yang mengikatmu. Ia berbunyi, "Percuma, dari dulu juga begini." Atau, "Semua ini salah mereka, jadi aku tidak perlu berbuat apa-apa." Protes jenis ini terasa melegakan sesaat karena memindahkan beban dari pundakmu. Tapi bersamaan dengan beban itu, ia memindahkan kendali. Kalau semua kesalahan ada di luar, maka semua solusi juga ada di luar, dan kamu tinggal menunggu.</p>
+  <p class="pull">Setiap kali kamu menyalahkan keadaan sepenuhnya, kamu menyerahkan kemudi kepada keadaan.</p>
+  <h3>Pertanyaan pemisah</h3>
+  <p>Ada satu pertanyaan sederhana untuk membedakan keduanya: "Setelah mengeluh ini, apa yang akan kulakukan?" Kalau jawabannya ada, keluhanmu sehat. Kalau jawabannya kosong, kamu sedang berputar di tempat.</p>
+  <p>Beri dirimu batas. Misalnya, sepuluh menit untuk meluapkan semuanya, bebas, tanpa disensor. Setelah itu tutup dengan satu kalimat: "Baik, sekarang apa satu hal yang bisa kuubah hari ini?" Satu hal saja. Mungkin hanya membuka buku selama dua puluh menit. Mungkin mengirim pesan untuk bertanya kepada kakak kelas. Mungkin merapikan meja.</p>
+  <p>Bergerak sedikit selalu lebih baik daripada mengeluh banyak, karena gerak, sekecil apa pun, mengubah posisimu. Keluhan tidak pernah mengubah apa-apa kecuali suasana hatimu.</p>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Keluhan apa yang paling sering kamu ulang dalam sebulan terakhir?</li>
+      <li>Di dalam keluhan itu, bagian mana yang benar-benar di luar kendalimu, dan bagian mana yang sebenarnya bisa kamu pengaruhi?</li>
+    </ul>
+    <h4>Langkah kecil hari ini</h4>
+    <p>Tulis satu keluhanmu di kertas. Di bawahnya, tulis satu tindakan sepuluh menit yang berkaitan dengannya. Lakukan sebelum tidur.</p>
+  </div>
+</section>
+
+<section class="bab" id="bab-3" data-n="3">
+  <div class="label"><span>Bab 3</span></div>
+  <h2 class="jdl">Proses Itu Tidak Rapi</h2>
+  <p class="epi">Di brosur, jalan menuju sukses lurus. Di kenyataan, ia berkelok, menanjak, dan kadang buntu.</p>
+  <p>Ketika kecil, kita membayangkan masa depan seperti garis lurus: sekolah, lulus, kerja, berhasil. Ketika mulai berjalan, kita sadar garisnya penuh coretan. Ada ujian yang tidak lulus. Ada jurusan yang ternyata tidak cocok. Ada rencana yang gagal total. Ada bulan-bulan ketika kamu merasa mundur.</p>
+  <p>Dan di sinilah banyak orang salah paham. Mereka mengira kalau jalannya berantakan, berarti mereka salah jalan.</p>
+  <h3>Mundur tidak sama dengan gagal</h3>
+  <p>Perhatikan orang yang mendaki gunung. Jalur ke puncak jarang menanjak terus. Kadang menurun dulu ke lembah, melewati sungai, memutar di punggung bukit. Dari bawah, semua itu terlihat seperti kehilangan arah. Dari atas, semuanya masuk akal.</p>
+  <p>Kamu sedang berada di tengah pendakian, dan dari tengah, selalu sulit melihat bentuk keseluruhan jalan. Itu sebabnya orang yang sedang berproses sering ragu. Bukan karena jalannya salah, tapi karena pandangannya masih terbatas.</p>
+  <p class="pull">Kamu tidak harus melihat seluruh tangga. Kamu hanya harus menginjak anak tangga berikutnya.</p>
+  <h3>Belokan yang kelihatannya tersesat</h3>
+  <p>Banyak orang menemukan arah hidupnya justru lewat jalan yang tidak direncanakan. Seseorang gagal masuk jurusan impian, lalu menemukan bidang yang ternyata lebih ia cintai. Seseorang kehilangan pekerjaan, lalu memulai usaha yang tidak pernah berani ia bayangkan. Seseorang salah memilih ekstrakurikuler, lalu bertemu sahabat sekaligus mentor yang mengubah hidupnya.</p>
+  <p>Tentu tidak semua belokan berujung baik, dan aku tidak akan berpura-pura begitu. Tapi hampir setiap belokan membawa sesuatu yang tidak akan kamu dapat di jalan lurus: pengalaman, ketangguhan, dan pemahaman tentang dirimu sendiri.</p>
+  <p>Jadi lain kali kamu merasa hidupmu berantakan, coba ganti pertanyaannya. Jangan tanya "Kenapa jalanku tidak rapi?" Tanyalah, "Apa yang sedang diajarkan jalan ini kepadaku?"</p>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Kejadian apa dalam hidupmu yang dulu terasa seperti kegagalan, tapi sekarang punya arti berbeda?</li>
+      <li>Apa yang kamu pelajari dari situ dan masih kamu pakai sampai sekarang?</li>
+    </ul>
+    <h4>Langkah kecil hari ini</h4>
+    <p>Gambar "peta perjalanan" hidupmu sejauh ini, lengkap dengan tanjakan dan belokannya. Beri tanda di bagian yang menurutmu justru membentukmu.</p>
+  </div>
+</section>
+
+<section class="bab" id="bab-4" data-n="4">
+  <div class="label"><span>Bab 4</span></div>
+  <h2 class="jdl">Jangan Banding Babmu dengan Bab Orang Lain</h2>
+  <p class="epi">Setiap orang membaca buku hidupnya sendiri. Jangan iri pada halaman yang bukan milikmu.</p>
+  <p>Ada satu kebiasaan yang diam-diam menguras energi anak muda: membandingkan diri. Teman sudah punya prestasi. Sepupu sudah bergaji. Kenalan sudah punya usaha. Sementara kamu masih mencari bentuk.</p>
+  <p>Perbandingan terasa masuk akal karena kita ingin tahu posisi kita. Tapi ia hampir selalu curang, karena kita membandingkan dua hal yang tidak setara.</p>
+  <h3>Tiga kecurangan dalam membandingkan</h3>
+  <p>Pertama, kamu membandingkan seluruh isi kepalamu, lengkap dengan keraguan dan ketakutan, dengan tampilan luar orang lain yang sudah dirapikan. Kamu tahu semua kekuranganmu, sedangkan yang kamu lihat dari orang lain hanyalah sorotnya.</p>
+  <p>Kedua, kamu mengabaikan titik awal. Setiap orang mulai dari tempat berbeda: modal berbeda, dukungan berbeda, kesempatan berbeda, beban berbeda. Dua orang yang sampai di garis yang sama pada waktu yang sama belum tentu menempuh jarak yang sama.</p>
+  <p>Ketiga, kamu membandingkan bab yang berbeda. Kamu sedang di bab dua, lalu menilai dirimu dengan orang yang sudah di bab lima belas. Tentu terasa tertinggal. Tapi dulu ia juga pernah berada di bab dua, dengan kebingungan yang sama persis, hanya saja kamu tidak ada di sana untuk melihatnya.</p>
+  <p class="pull">Satu-satunya perbandingan yang adil adalah dirimu hari ini dengan dirimu yang kemarin.</p>
+  <h3>Mengubah iri menjadi petunjuk</h3>
+  <p>Bukan berarti kamu harus berhenti melihat orang lain. Iri bisa menjadi kompas kalau dibaca dengan benar. Ketika kamu iri pada sesuatu, itu sering menunjukkan apa yang sebenarnya kamu inginkan. Alih-alih menekannya atau membiarkannya menyakitimu, ubah menjadi pertanyaan: "Apa yang ia lakukan sehingga bisa begini, dan apa satu hal yang bisa kutiru?"</p>
+  <p>Iri yang dipelihara membuatmu kecil. Iri yang dipelajari membuatmu tumbuh.</p>
+  <p>Dan satu hal lagi: syukuri teman yang berhasil lebih dulu. Keberhasilan mereka tidak mengurangi jatahmu. Justru mereka sedang membuktikan bahwa jalan itu bisa ditempuh, dan mungkin kelak bisa menunjukkan arahnya kepadamu.</p>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Kepada siapa kamu paling sering membandingkan diri? Apa yang sebenarnya kamu inginkan dari mereka?</li>
+      <li>Sebutkan tiga hal yang sudah kamu capai dan dulu terasa mustahil.</li>
+    </ul>
+    <h4>Langkah kecil hari ini</h4>
+    <p>Tulis satu kemajuan kecilmu minggu ini, sekecil apa pun. Lalu kurangi waktu menggulir media sosial selama tiga hari ke depan dan perhatikan perubahan suasana hatimu.</p>
+  </div>
+</section>
+
+<section class="bab" id="bab-5" data-n="5">
+  <div class="label"><span>Bab 5</span></div>
+  <h2 class="jdl">Langkah Kecil yang Diulang Setiap Hari</h2>
+  <p class="epi">Tetesan air melubangi batu, bukan karena kuat, tapi karena tidak pernah absen.</p>
+  <p>Kita sering mengagumi lompatan besar dan meremehkan langkah kecil. Padahal hampir semua lompatan yang kita kagumi sebenarnya adalah tumpukan langkah kecil yang tidak sempat difoto.</p>
+  <h3>Rahasia yang membosankan</h3>
+  <p>Orang yang mahir bermain musik tidak menjadi mahir dalam satu malam latihan panjang. Ia berlatih tiga puluh menit setiap hari selama bertahun-tahun. Orang yang lancar berbahasa asing tidak menghafal ribuan kata dalam seminggu. Ia belajar sepuluh kata sehari tanpa banyak drama. Orang yang tubuhnya bugar tidak mengubah hidup dengan satu sesi olahraga ekstrem. Ia berjalan kaki, hari demi hari.</p>
+  <p>Terdengar membosankan, memang. Tapi justru di situlah kekuatannya. Keberhasilan jarang lahir dari semangat yang meledak-ledak. Ia lahir dari keteraturan yang tenang.</p>
+  <p class="pull">Semangat membuatmu memulai. Kebiasaan membuatmu sampai.</p>
+  <h3>Mengapa semangat tidak cukup</h3>
+  <p>Semangat itu seperti cuaca: datang dan pergi. Kalau kamu menggantungkan kemajuan pada semangat, kamu hanya bergerak di hari-hari cerah. Sementara hari-hari mendung, yang jumlahnya jauh lebih banyak, kamu diam.</p>
+  <p>Kebiasaan bekerja sebaliknya. Ia tidak menunggu suasana hati. Ia membuat langkah kecil menjadi bagian dari hari, seperti menyikat gigi. Kamu tidak perlu termotivasi untuk menyikat gigi. Kamu hanya melakukannya.</p>
+  <h3>Cara membuat kebiasaan menetap</h3>
+  <ul>
+    <li><strong>Kecilkan sampai terasa konyol.</strong> Targetnya bukan membaca satu bab, tapi membaca satu halaman. Bukan belajar dua jam, tapi lima belas menit. Bagian tersulit adalah memulai, dan target kecil menghilangkan alasan untuk menunda.</li>
+    <li><strong>Tempelkan pada rutinitas yang sudah ada.</strong> Setelah salat subuh, buka buku sepuluh menit. Setelah makan malam, tulis tiga baris catatan. Kebiasaan baru lebih mudah menempel pada kebiasaan lama.</li>
+    <li><strong>Catat, jangan hanya mengingat.</strong> Beri tanda silang di kalender untuk setiap hari kamu melakukannya. Rantai tanda itu akan menjadi bukti nyata bahwa kamu sedang bergerak, terutama di hari ketika kamu merasa tidak maju.</li>
+    <li><strong>Kalau terlewat sehari, jangan terlewat dua hari.</strong> Satu hari bolong bukan kegagalan. Dua hari berturut-turut mulai menjadi kebiasaan baru yang tidak kamu inginkan.</li>
+  </ul>
+  <p>Kamu tidak perlu menjadi luar biasa hari ini. Cukup menjadi sedikit lebih baik dari kemarin, lalu ulangi, lagi dan lagi. Waktu akan mengurus sisanya.</p>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Kebiasaan kecil apa yang, kalau dilakukan setiap hari selama setahun, akan paling mengubah hidupmu?</li>
+      <li>Apa yang biasanya membuatmu berhenti di tengah jalan?</li>
+    </ul>
+    <h4>Langkah kecil hari ini</h4>
+    <p>Pilih satu kebiasaan, perkecil sampai hanya butuh sepuluh menit, dan jadwalkan di jam tertentu. Mulai hari ini, lalu beri tanda silang pertama di kalendermu.</p>
+  </div>
+</section>
+
+<section class="bab" id="bab-6" data-n="6">
+  <div class="label"><span>Bab 6</span></div>
+  <h2 class="jdl">Gagal, Guru yang Galak tapi Jujur</h2>
+  <p class="epi">Orang yang tidak pernah jatuh biasanya belum pernah berani berlari.</p>
+  <p>Tidak ada yang suka gagal. Rasanya memalukan, menyakitkan, dan sering membuat kita bertanya, "Jangan-jangan aku memang tidak mampu." Tapi kalau kita jujur, hampir semua hal penting yang kita ketahui hari ini dipelajari lewat salah.</p>
+  <p>Kamu jatuh berkali-kali sebelum bisa berjalan. Kamu salah eja sebelum bisa menulis. Kamu salah hitung sebelum paham matematika. Tidak ada yang menyebut itu kegagalan waktu kita kecil. Kita menyebutnya belajar. Entah sejak kapan, ketika dewasa, kata itu berganti.</p>
+  <h3>Gagal peristiwa, bukan gagal pribadi</h3>
+  <p>Ada beda besar antara "aku gagal dalam ujian ini" dan "aku orang gagal". Yang pertama adalah peristiwa, dan peristiwa bisa dipelajari, diperbaiki, diulang. Yang kedua adalah vonis, dan vonis menutup semua pintu.</p>
+  <p>Jangan biarkan satu hasil buruk menjadi definisi atas dirimu. Hasil itu hanyalah data. Ia memberi tahu bahwa cara tertentu belum berhasil. Itu informasi berharga, bukan akhir cerita.</p>
+  <p class="pull">Kegagalan tidak mengatakan kamu tidak mampu. Ia mengatakan caramu belum tepat.</p>
+  <h3>Tiga pertanyaan setelah jatuh</h3>
+  <p>Setelah rasa sakitnya mereda, beri dirimu tiga pertanyaan:</p>
+  <ul>
+    <li><strong>Apa yang sebenarnya terjadi?</strong> Tulis kronologinya apa adanya, tanpa membela diri dan tanpa menyalahkan diri.</li>
+    <li><strong>Apa bagian yang ada dalam kendaliku?</strong> Persiapan, waktu belajar, cara berlatih, orang yang kutanya. Fokus di situ, karena hanya itu yang bisa kamu ubah.</li>
+    <li><strong>Apa satu hal yang akan kucoba berbeda?</strong> Hanya satu. Terlalu banyak perubahan membuatmu kewalahan dan sulit tahu mana yang berhasil.</li>
+  </ul>
+  <p>Setelah itu, bangkit. Tidak harus langsung gagah. Bangkit pelan-pelan pun tetap bangkit.</p>
+  <h3>Malu itu sementara</h3>
+  <p>Rasa malu setelah gagal sering terasa jauh lebih besar daripada kenyataannya. Kebanyakan orang sibuk dengan hidupnya sendiri dan cepat lupa pada kejatuhanmu. Yang paling lama mengingatnya biasanya dirimu sendiri. Berbaik hatilah kepada dirimu seperti kamu berbaik hati kepada sahabat yang sedang terpuruk.</p>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Kegagalan apa yang masih sering kamu ingat dengan perih? Apa yang sebenarnya bisa kamu ambil darinya?</li>
+      <li>Kalau sahabatmu mengalami hal yang sama, apa yang akan kamu katakan kepadanya? Bisakah kamu mengatakannya juga kepada dirimu?</li>
+    </ul>
+    <h4>Langkah kecil hari ini</h4>
+    <p>Pilih satu kegagalan lama. Tulis tiga hal yang kamu pelajari darinya, lalu tutup dengan kalimat: "Aku boleh melangkah lagi."</p>
+  </div>
+</section>
+
+<section class="bab" id="bab-7" data-n="7">
+  <div class="label"><span>Bab 7</span></div>
+  <h2 class="jdl">Sabar Bukan Berarti Diam</h2>
+  <p class="epi">Sabar adalah terus bekerja sambil percaya, bukan menunggu sambil berharap.</p>
+  <p>Kata "sabar" sering disalahpahami. Banyak yang mengira sabar berarti pasrah, menerima apa saja, menunggu tanpa berbuat. Padahal sabar yang sebenarnya jauh lebih aktif dan jauh lebih berat.</p>
+  <h3>Sabar yang aktif</h3>
+  <p>Petani yang sabar tidak duduk di pinggir sawah menatap padi. Ia mengairi, menyiangi, memberi pupuk, menjaga dari hama, lalu menunggu masa panen dengan tenang. Kesabarannya terletak pada kemampuannya terus bekerja tanpa memaksa padi tumbuh dalam semalam.</p>
+  <p>Begitu pula kamu. Sabar berarti tetap belajar ketika nilai belum naik. Tetap berlatih ketika kemajuan terasa lambat. Tetap berusaha ketika belum ada tepuk tangan. Dan pada saat yang sama, melepaskan keinginan untuk mengatur kapan hasilnya harus tiba.</p>
+  <p class="pull">Kerjakan bagianmu dengan sungguh-sungguh. Biarkan waktu mengerjakan bagiannya.</p>
+  <h3>Lembah kekecewaan</h3>
+  <p>Ada satu fase yang hampir selalu dialami siapa pun yang berproses: kamu sudah berusaha cukup lama, tapi hasilnya belum sebanding dengan harapan. Aku menyebutnya lembah kekecewaan. Di fase inilah kebanyakan orang berhenti.</p>
+  <p>Padahal lembah itu bukan tanda bahwa usahamu sia-sia. Ia hanya jeda antara usaha yang terkumpul dan hasil yang belum tampak. Seperti air yang dipanaskan: dari dua puluh sampai sembilan puluh sembilan derajat, ia tampak sama saja. Baru di derajat keseratus ia mendidih. Orang yang berhenti di derajat sembilan puluh sembilan mengira panasnya tidak berguna.</p>
+  <p>Kamu tidak tahu sedang berada di derajat berapa. Karena itu, jangan memutuskan berhenti ketika suasana hatimu sedang paling gelap. Putuskan nanti, ketika kepalamu jernih dan tubuhmu sudah beristirahat.</p>
+  <h3>Cara menjaga kesabaran</h3>
+  <ul>
+    <li>Ukur kemajuan dalam bulan, bukan dalam hari. Perubahan harian hampir tidak terlihat, perubahan bulanan jelas.</li>
+    <li>Rayakan hal kecil. Selesai satu bab, rapi satu catatan, bangun lebih pagi tiga hari berturut-turut. Hargai itu.</li>
+    <li>Ingat alasanmu. Tulis mengapa kamu memulai, lalu tempel di tempat yang sering kamu lihat.</li>
+  </ul>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Di bagian mana kamu merasa sudah hampir menyerah? Apakah kamu benar-benar sudah mencoba semua cara?</li>
+      <li>Apa alasan terdalam kamu memulai semua ini?</li>
+    </ul>
+    <h4>Langkah kecil hari ini</h4>
+    <p>Tulis alasanmu berjuang dalam tiga kalimat, lalu simpan di dompet atau tempel di dinding kamar.</p>
+  </div>
+</section>
+
+<section class="bab" id="bab-8" data-n="8">
+  <div class="label"><span>Bab 8</span></div>
+  <h2 class="jdl">Siapa yang Duduk Di Sekitarmu</h2>
+  <p class="epi">Kamu tidak sedang berjuang sendirian, walau kadang terasa begitu.</p>
+  <p>Mereka yang sering bersamamu perlahan membentuk caramu berpikir, caramu bicara, bahkan ukuran mimpimu. Ini bukan soal siapa yang baik atau jahat. Ini soal ke mana arah percakapan sehari-harimu membawamu.</p>
+  <h3>Lingkaran yang menarik ke atas</h3>
+  <p>Perhatikan obrolan di lingkaran pergaulanmu. Apakah kalian sering membicarakan rencana, buku, ide, dan cara memperbaiki diri? Atau lebih sering membicarakan kekurangan orang lain, keluhan, dan alasan mengapa semua mustahil?</p>
+  <p>Tidak ada lingkaran yang sempurna, dan kita tidak perlu membuang teman yang sedang kesulitan. Tapi kita perlu jujur menilai: setelah menghabiskan waktu bersama mereka, aku pulang dengan energi yang bertambah atau berkurang?</p>
+  <p class="pull">Carilah orang yang membuatmu ingin menjadi lebih baik, bukan orang yang membuatmu nyaman dengan keadaan yang sama.</p>
+  <h3>Berani bertanya, berani dibimbing</h3>
+  <p>Banyak anak muda menahan diri untuk bertanya karena takut dianggap bodoh. Padahal justru bertanyalah jalan tercepat. Seorang kakak kelas, guru, pelatih, atau kenalan yang sudah lebih dulu melewati jalanmu bisa menghemat waktumu bertahun-tahun.</p>
+  <p>Kebanyakan orang senang membantu ketika ditanya dengan tulus dan sopan. Datanglah dengan pertanyaan yang spesifik, tunjukkan bahwa kamu sudah mencoba, dan berterima kasihlah dengan sungguh-sungguh. Satu percakapan yang baik bisa mengubah arahmu.</p>
+  <h3>Orang tua, doa yang diam-diam menjagamu</h3>
+  <p>Bagi banyak dari kita, ada orang-orang di rumah yang diam-diam memikul harapan dan doa untuk kita. Kadang mereka tidak pandai mengungkapkannya. Kadang cara mereka menyampaikan kasih terdengar seperti tuntutan. Tapi di balik itu, hampir selalu ada keinginan agar kita hidup lebih mudah daripada mereka.</p>
+  <p>Berjuanglah juga untuk mereka, dan sempatkan berbicara dengan mereka tentang perjuanganmu. Kamu akan terkejut betapa sering beban terasa lebih ringan hanya karena diceritakan.</p>
+  <h3>Dan jadilah orang itu bagi orang lain</h3>
+  <p>Suatu hari, akan ada seseorang di belakangmu yang sedang bingung seperti kamu hari ini. Jadilah orang yang kamu butuhkan dulu. Mengulurkan tangan tidak menunggu kita sukses. Cukup menunggu kita sedikit lebih maju dari orang yang kita bantu.</p>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Siapa tiga orang yang paling memengaruhi caramu berpikir? Ke arah mana mereka membawamu?</li>
+      <li>Siapa satu orang yang ingin kamu ajak bicara tentang mimpimu, tapi belum berani?</li>
+    </ul>
+    <h4>Langkah kecil hari ini</h4>
+    <p>Kirim satu pesan kepada orang yang kamu hormati. Tanyakan satu hal yang selama ini kamu pendam. Dan ucapkan terima kasih kepada satu orang yang diam-diam mendukungmu.</p>
+  </div>
+</section>
+
+<section class="bab" id="bab-9" data-n="9">
+  <div class="label"><span>Bab 9</span></div>
+  <h2 class="jdl">Istirahat Bukan Menyerah</h2>
+  <p class="epi">Busur yang terus ditarik tanpa dilepas akan patah sebelum anak panahnya meluncur.</p>
+  <p>Budaya berjuang sering membuat kita merasa bersalah ketika beristirahat. Kita mengira orang hebat tidak tidur, tidak jeda, tidak pernah lelah. Maka kita memaksa diri, begadang berhari-hari, lalu heran ketika tubuh dan pikiran memberontak.</p>
+  <p>Mari luruskan: istirahat adalah bagian dari proses, bukan lawannya. Otot tumbuh saat pemulihan, bukan saat latihan. Ingatan menguat saat tidur, bukan saat membaca. Ide muncul ketika kepala sedang santai, bukan ketika dipaksa.</p>
+  <h3>Beda lelah dan jenuh</h3>
+  <p>Lelah fisik sembuh dengan tidur dan makan yang baik. Jenuh batin sembuh dengan hal yang berbeda: berganti suasana, bertemu orang yang menyenangkan, melakukan sesuatu yang kamu cintai tanpa target apa pun. Kenali yang mana yang sedang kamu rasakan, supaya obatmu tepat.</p>
+  <p class="pull">Beristirahat supaya bisa melanjutkan itu bijak. Menghilang supaya tidak perlu menghadapi itu lain cerita.</p>
+  <h3>Menjaga mesin utamamu</h3>
+  <ul>
+    <li><strong>Tidur.</strong> Kurang tidur membuat semua terasa lebih berat: masalah tampak lebih besar, semangat tampak lebih kecil. Sebelum memutuskan hidupmu hancur, pastikan kamu sudah cukup tidur.</li>
+    <li><strong>Bergerak.</strong> Jalan kaki dua puluh menit saja bisa menjernihkan pikiran yang kusut.</li>
+    <li><strong>Makan dengan layak.</strong> Otak yang berjuang butuh bahan bakar. Jangan menghukum dirimu dengan melewatkan makan.</li>
+    <li><strong>Berbagi.</strong> Pikiran yang diceritakan kepada orang yang dipercaya biasanya mengecil.</li>
+  </ul>
+  <h3>Kalau bebanmu terasa terlalu berat</h3>
+  <p>Ada waktu ketika lelah bukan sekadar lelah. Kalau kamu merasa hampa berkepanjangan, kehilangan minat pada hal yang dulu kamu sukai, atau terus-menerus merasa tidak berharga, itu bukan tanda kelemahan. Itu tanda kamu perlu ditemani. Bicaralah kepada orang tua, guru, konselor, atau tenaga profesional. Meminta bantuan adalah keberanian, bukan kegagalan.</p>
+  <p>Kamu tidak harus kuat setiap saat. Kamu hanya harus tetap ada, dan tidak sendirian.</p>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Kapan terakhir kali kamu benar-benar beristirahat tanpa rasa bersalah?</li>
+      <li>Apa satu kegiatan yang membuat energimu terisi kembali?</li>
+    </ul>
+    <h4>Langkah kecil hari ini</h4>
+    <p>Jadwalkan satu jam khusus minggu ini untuk hal yang kamu cintai, tanpa target, tanpa ponsel. Anggap itu bagian dari kerja kerasmu.</p>
+  </div>
+</section>
+
+<section class="bab" id="bab-10" data-n="10">
+  <div class="label"><span>Bab 10</span></div>
+  <h2 class="jdl">Ikhtiar, Doa, dan Tenang Setelahnya</h2>
+  <p class="epi">Lakukan semua yang bisa kamu lakukan, lalu percayakan yang tidak bisa kamu kendalikan.</p>
+  <p>Ada bagian dalam perjuangan yang sepenuhnya milik kita: belajar, berlatih, menyiapkan diri, menjaga sikap. Ada pula bagian yang tidak bisa kita pegang: hasil akhir, waktu datangnya, jalan yang akan dibukakan. Kecemasan sering muncul ketika kita mencampuradukkan keduanya, ketika kita mencoba mengendalikan hal yang bukan wilayah kita.</p>
+  <h3>Dua sayap</h3>
+  <p>Bagi yang meyakini, usaha dan doa adalah dua sayap yang tidak bisa dipisahkan. Berdoa tanpa bergerak seperti burung bersayap satu. Bergerak tanpa berdoa seperti membawa beban sendirian, padahal ada tempat bersandar.</p>
+  <p>Ikhtiar menyiapkanmu untuk menerima. Doa menenangkanmu ketika hasilnya belum datang. Dan tawakal, yaitu menyerahkan hasil setelah berusaha sepenuh kemampuan, melepaskanmu dari kecemasan yang tidak perlu.</p>
+  <p class="pull">Tawakal bukan alasan untuk malas. Ia ketenangan bagi orang yang sudah bekerja.</p>
+  <h3>Rezeki dan waktu yang tepat</h3>
+  <p>Seringkali kita merasa terlambat padahal sebenarnya sedang dipersiapkan. Hal yang kita inginkan tidak datang sekarang, mungkin karena kita belum cukup siap menanggungnya, atau karena ada sesuatu yang lebih tepat sedang disiapkan. Kita baru memahaminya ketika menengok ke belakang.</p>
+  <p>Coba ingat satu hal yang dulu sangat kamu inginkan tapi tidak terwujud. Sekarang, apakah kamu bersyukur ia tidak terjadi? Banyak orang menjawab ya. Mungkin hari ini pun sedang begitu, hanya saja kamu belum sampai di titik untuk menengok ke belakang.</p>
+  <h3>Syukur sebagai bahan bakar</h3>
+  <p>Orang yang hanya fokus pada apa yang belum dimiliki akan selalu merasa kurang, seberapa pun yang sudah ia capai. Latih diri untuk menyebut tiga hal baik setiap hari: tubuh yang masih sehat, makanan hari ini, orang yang peduli. Syukur tidak membuatmu berhenti berjuang. Ia membuatmu berjuang dengan hati yang lebih lapang.</p>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Bagian mana dari kecemasanmu yang sebenarnya di luar kendalimu?</li>
+      <li>Hal apa yang dulu kamu paksakan, lalu ternyata lebih baik tidak terjadi?</li>
+    </ul>
+    <h4>Langkah kecil hari ini</h4>
+    <p>Sebelum tidur, tulis tiga hal yang kamu syukuri hari ini, lalu serahkan satu kekhawatiranmu dalam doa dengan tenang.</p>
+  </div>
+</section>
+
+<section class="bab" id="bab-11" data-n="11">
+  <div class="label"><span>Bab 11</span></div>
+  <h2 class="jdl">Menjadi Orang yang Siap Menerima Masa Depan</h2>
+  <p class="epi">Masa depan tidak hanya menunggu kamu sampai. Ia juga menunggu kamu menjadi pantas.</p>
+  <p>Kita sering sibuk menanyakan, "Kapan masa depanku datang?" Mungkin pertanyaan yang lebih berguna adalah, "Aku sedang menjadi orang seperti apa untuk menyambutnya?"</p>
+  <p>Gelar, jabatan, dan penghasilan memang penting. Tapi yang paling menentukan bagaimana kamu menjalani masa depan adalah karaktermu: cara kamu bekerja, cara kamu memperlakukan orang, cara kamu bersikap ketika tidak ada yang melihat.</p>
+  <h3>Bangun yang tidak bisa diambil orang</h3>
+  <p>Uang bisa habis. Jabatan bisa berganti. Tapi kemampuan, kejujuran, dan kebiasaan baik akan ikut ke mana pun kamu pergi. Karena itu, selama berproses, bangunlah hal-hal yang tidak bisa dirampas keadaan:</p>
+  <ul>
+    <li><strong>Keahlian.</strong> Pilih satu bidang, dalami dengan serius, dan jadilah orang yang bisa diandalkan di bidang itu.</li>
+    <li><strong>Integritas.</strong> Tepati janji kecil. Kejujuran di hal remeh membangun kepercayaan untuk hal besar.</li>
+    <li><strong>Kemauan belajar.</strong> Orang yang terus belajar tidak pernah benar-benar ketinggalan zaman.</li>
+    <li><strong>Hati yang rendah.</strong> Semakin tinggi ilmu, semakin pantas ia menunduk. Orang rendah hati lebih mudah diajari dan lebih mudah dicintai.</li>
+  </ul>
+  <p class="pull">Jadilah orang yang, kalau kesempatan datang, sudah siap. Dan kalau tidak datang, tetap berharga.</p>
+  <h3>Mimpi yang cukup besar, langkah yang cukup kecil</h3>
+  <p>Jangan takut bermimpi besar, tapi turunkan mimpimu menjadi tangga yang bisa diinjak. Tulis tujuan lima tahun. Pecah menjadi satu tahun. Pecah lagi menjadi bulan ini. Pecah lagi menjadi minggu ini. Pecah lagi menjadi hari ini. Mimpi tanpa langkah hanyalah lamunan, sedangkan langkah tanpa mimpi mudah kehilangan arah. Keduanya perlu hadir bersama.</p>
+  <h3>Yang akan kamu syukuri nanti</h3>
+  <p>Suatu hari kamu akan menengok ke belakang dan melihat malam-malam sulit ini dengan mata yang berbeda. Kamu mungkin tersenyum dan berkata, "Ternyata aku sekuat itu." Anak muda yang dulu ragu itu akan kamu peluk dengan bangga.</p>
+  <p>Maka mulai sekarang, perlakukan prosesmu dengan hormat. Bukan sekadar sebagai jembatan menuju masa depan, tapi sebagai bagian dari kisahmu yang pantas dijalani sepenuh hati.</p>
+  <div class="box">
+    <h4>Renungkan</h4>
+    <ul>
+      <li>Lima tahun lagi, kamu ingin dikenal sebagai orang seperti apa?</li>
+      <li>Kebiasaan hari ini mana yang mendekatkanmu ke sana, dan mana yang menjauhkan?</li>
+    </ul>
+    <h4>Langkah kecil hari ini</h4>
+    <p>Tulis satu paragraf "surat untuk dirimu lima tahun lagi". Simpan, dan buka kembali pada waktunya.</p>
+  </div>
+</section>
+
+<section class="bab" id="epilog">
+  <div class="label"><span>Epilog</span></div>
+  <h2 class="jdl">Surat dari Dirimu yang Sudah Sampai</h2>
+  <p class="epi">Kamu akan tiba. Pastikan kamu tetap menjadi dirimu ketika tiba.</p>
+  <p>Kepadamu yang sedang berjuang hari ini,</p>
+  <p>Aku adalah dirimu di masa depan. Aku menulis ini dari tempat yang dulu kamu impikan, dan aku ingin kamu tahu beberapa hal.</p>
+  <p>Malam-malam ketika kamu ingin menyerah, aku ingat semuanya. Aku ingat betapa lelahnya, betapa sepinya, betapa kamu ingin berteriak bahwa ini tidak adil. Aku tidak akan bilang itu tidak berat, karena memang berat. Tapi aku ingin kamu tahu bahwa semuanya berarti. Tidak ada satu pun usaha yang terbuang.</p>
+  <p>Ujian yang membuatmu gentar itu, ternyata mengajarkan cara berdiri. Orang-orang yang meragukanmu, ternyata memberimu alasan untuk membuktikan. Hari-hari yang terasa tidak maju, ternyata sedang menumbuhkan akarmu.</p>
+  <p>Yang paling ingin kusampaikan: terima kasih. Terima kasih karena tidak berhenti. Terima kasih karena bangun lagi setelah jatuh, lagi, dan lagi. Aku ada di sini hari ini karena kamu memilih melangkah ketika kamu tidak yakin ke mana.</p>
+  <p class="pull">Semua itu butuh proses, bukan protes. Dan kamu, ternyata, sedang menjalaninya dengan baik.</p>
+  <p>Tetaplah berjalan. Pelan tidak apa-apa. Berhenti sebentar pun tidak apa-apa. Asal jangan lupa, kamu sedang menuju sesuatu yang baik.</p>
+  <p>Sampai bertemu di sini.</p>
+  <p class="sign">Dari dirimu, yang sudah sampai.</p>
+</section>
+
+</main>
+
+<footer>
+  <p>Selesai sampai di sini. Ini naskah materi, siap dikembangkan, ditambah cerita pribadi, dan disunting bersama.</p>
+</footer>
+</div>
+
+<script>
+(function(){
+  var total=11;
+  function mk(n,max){var s='';for(var i=1;i<=max;i++){var h=Math.round(20+(i/max)*80);s+='<b class="'+(i<=n?'on':'')+'" style="height:'+h+'%"></b>';}return s;}
+  var c=document.getElementById('coverStairs');
+  if(c){c.innerHTML=mk(total,total);}
+  var secs=document.querySelectorAll('section.bab[data-n]');
+  for(var i=0;i<secs.length;i++){
+    var n=parseInt(secs[i].getAttribute('data-n'),10);
+    var l=secs[i].querySelector('.label');
+    var d=document.createElement('div');
+    d.className='stairs';d.setAttribute('aria-hidden','true');d.innerHTML=mk(n,total);
+    l.appendChild(d);
+  }
+  /* Navigasi per halaman: satu bab tampil, tombol lanjut dan kembali di bawahnya */
+  var ids=['prolog','bab-1','bab-2','bab-3','bab-4','bab-5','bab-6','bab-7','bab-8','bab-9','bab-10','bab-11','epilog'];
+  var cover=document.querySelector('header.cover');
+  var toc=document.querySelector('nav.toc');
+  var foot=document.querySelector('footer');
+  var tocLinks=toc.querySelectorAll('a');
+  function nm(i){
+    var a=tocLinks[i];
+    return {k:a.querySelector('.n').textContent,t:a.querySelector('.n').nextElementSibling.textContent};
+  }
+  function lab(k){return k.charAt(0)+k.slice(1).toLowerCase();}
+  for(var j=0;j<ids.length;j++){
+    (function(j){
+      var s=document.getElementById(ids[j]);
+      var back=document.createElement('a');
+      back.className='topback';back.href='#daftar-isi';back.textContent='← Daftar Isi';
+      s.insertBefore(back,s.firstChild);
+      var pg=document.createElement('div');
+      pg.className='pager';
+      var h='';
+      if(j>0){var pv=nm(j-1);h+='<a class="prev" href="#'+ids[j-1]+'"><small>← '+lab(pv.k)+' sebelumnya</small><span>'+pv.t+'</span></a>';}
+      if(j<ids.length-1){var nx=nm(j+1);h+='<a class="next'+(j===0?' solo':'')+'" href="#'+ids[j+1]+'"><small>Lanjut ke '+lab(nx.k)+' →</small><span>'+nx.t+'</span></a>';}
+      else{h+='<a class="next" href="#daftar-isi"><small>Selesai</small><span>Kembali ke Daftar Isi</span></a>';}
+      pg.innerHTML=h;
+      s.appendChild(pg);
+    })(j);
+  }
+  function route(){
+    var h=location.hash.replace('#','');
+    var idx=ids.indexOf(h);
+    for(var q=0;q<ids.length;q++){
+      document.getElementById(ids[q]).classList.toggle('on',q===idx);
+    }
+    var home=idx<0;
+    cover.hidden=!home;
+    toc.hidden=!home;
+    foot.hidden=!(home||idx===ids.length-1);
+    window.scrollTo(0,0);
+    upd();
+  }
+  window.addEventListener('hashchange',route);
+
+  var p=document.getElementById('prog');
+  function upd(){
+    var h=document.documentElement.scrollHeight-window.innerHeight;
+    var y=window.pageYOffset||document.documentElement.scrollTop;
+    p.style.width=(h>0?Math.min(100,y/h*100):0)+'%';
+  }
+  window.addEventListener('scroll',upd,{passive:true});
+  window.addEventListener('resize',upd);
+  route();
+})();
+</script>
+
+</body></html>
